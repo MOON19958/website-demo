@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #eef2f3, #8e9eab);
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #0f4b5e, #057c85);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .parallax {
+            background-image: url('confused.jpg');
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .parallax h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .about-section {
+            margin: 50px auto;
+            max-width: 900px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #057c85;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .image-container {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .btn-custom {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            color: white;
+            background: linear-gradient(to right, #057c85, #0f4b5e);
+            border: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background: linear-gradient(to right, #0f4b5e, #057c85);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: linear-gradient(to right, #0f4b5e, #057c85);
+            color: white;
+            padding: 20px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to the Crazy Website!</h1>
+        <p>Your path to understanding the crazy artist.</p>
+    </header>
+
+    <!-- Parallax Section -->
+    <div class="parallax">
+        <h1>BOOOOO!</h1>
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section container fade-in">
+        <h2>About Me</h2>
+        <div class="image-container">
+            <img src="jean.jpg" alt="Jean V. Caingcoy">
+        </div>
+        <p class="text-center">
+            Welcome to my portfolio! I am an artist and designer passionate about creating visually engaging artworks. I love experimenting with different styles to bring creativity to life.
+            <br><br>
+            Dive into my designs and discover the world of creativity I’ve built!
+        </p>
+        <div class="text-center">
+            <a href="about.html" class="btn btn-custom">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-center">
+        <p>&copy; 2024 Jean V. Caingcoy. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            window.addEventListener('scroll', function () {
+                fadeInElements.forEach(function (element) {
+                    if (element.getBoundingClientRect().top < window.innerHeight - 50) {
+                        element.classList.add('fadeInUp');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
